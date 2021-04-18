@@ -1,4 +1,4 @@
-<?php namespace peroks\plugin_customer\plugin_package;
+<?php namespace peroks\plugins\guzzle;
 /**
  * Enables automated plugin updates from a GitHub reposistory.
  *
@@ -236,7 +236,7 @@ class Repository
 		Admin::instance()->add_section( array(
 			'section' => self::SECTION_REPOSITORY,
 			'page'    => Admin::PAGE,
-			'label'   => __( 'Automated plugin update from a GitHub repository', '[plugin-text-domain]' ),
+			'label'   => __( 'Automated plugin update from a GitHub repository', 'wp-guzzle' ),
 		) );
 
 		//	Repository url
@@ -244,8 +244,8 @@ class Repository
 			'option'      => self::OPTION_REPOSITORY_URL,
 			'section'     => self::SECTION_REPOSITORY,
 			'page'        => Admin::PAGE,
-			'label'       => __( 'GitHub Repository URL', '[plugin-text-domain]' ),
-			'description' => __( 'Enter the URL to the plugin repository on GitHub.', '[plugin-text-domain]' ),
+			'label'       => __( 'GitHub Repository URL', 'wp-guzzle' ),
+			'description' => __( 'Enter the URL to the plugin repository on GitHub.', 'wp-guzzle' ),
 		) );
 
 		//	Repository token
@@ -253,8 +253,8 @@ class Repository
 			'option'      => self::OPTION_REPOSITORY_TOKEN,
 			'section'     => self::SECTION_REPOSITORY,
 			'page'        => Admin::PAGE,
-			'label'       => __( 'GitHub access Token', '[plugin-text-domain]' ),
-			'description' => __( 'Enter an access token for the plugin repository on GitHub.', '[plugin-text-domain]' ),
+			'label'       => __( 'GitHub access Token', 'wp-guzzle' ),
+			'description' => __( 'Enter an access token for the plugin repository on GitHub.', 'wp-guzzle' ),
 		) );
 	}
 

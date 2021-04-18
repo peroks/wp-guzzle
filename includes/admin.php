@@ -1,4 +1,4 @@
-<?php namespace peroks\plugin_customer\plugin_package;
+<?php namespace peroks\plugins\guzzle;
 /**
  * The Plugin admin settings page.
  *
@@ -31,11 +31,11 @@ class Admin
 		$name = plugin_basename( Main::FILE );
 
 		//	Adds a top level or a submenu page to the admin menu (or both).
-		add_action( 'admin_menu', array( $this, 'admin_top_menu' ), 5 );
+		//	add_action( 'admin_menu', array( $this, 'admin_top_menu' ), 5 );
 		add_action( 'admin_menu', array( $this, 'admin_sub_menu' ), 5 );
 
 		//	Displays a "Settings" and a "Support" link on the Plugins page.
-		add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
+		//	add_filter( 'plugin_row_meta', array( $this, 'plugin_row_meta' ), 10, 2 );
 		add_filter( "plugin_action_links_{$name}", array( $this, 'plugin_action_links' ) );
 
 		//	Admin settings
@@ -52,7 +52,7 @@ class Admin
 	 * Adds a top level page to the admin menu.
 	 */
 	public function admin_top_menu() {
-		$title = __( '[This Plugin Name] settings', '[plugin-text-domain]' );
+		$title = __( 'Guzzle for WordPress settings', 'wp-guzzle' );
 		$page  = add_menu_page(
 			$title,									//	Page title
 			Main::NAME,								//	Menu title
@@ -69,7 +69,7 @@ class Admin
 	 * Adds a submenu page to the admin menu.
 	 */
 	public function admin_sub_menu() {
-		$title = __( '[This Plugin Name] settings', '[plugin-text-domain]' );
+		$title = __( 'Guzzle for WordPress settings', 'wp-guzzle' );
 		$page  = add_submenu_page(
 			'options-general.php',					//	Parent page slug
 			$title,									//	Page title
@@ -93,7 +93,7 @@ class Admin
 		if ( plugin_basename( Main::FILE ) === $file ) {
 			$links[] = vsprintf( '<a href="%s" target="_blank">%s</a>', array(
 				esc_url( 'https://codeable.io/developers/per-egil-roksvaag/' ),
-				esc_html__( 'Support', '[plugin-text-domain]' ),
+				esc_html__( 'Support', 'wp-guzzle' ),
 			) );
 		}
 		return $links;
@@ -108,7 +108,7 @@ class Admin
 	public function plugin_action_links( $actions ) {
 		array_unshift( $actions, vsprintf( '<a href="%s">%s</a>', array(
 			esc_url( menu_page_url( self::PAGE, false ) ),
-			esc_html__( 'Settings', '[plugin-text-domain]' ),
+			esc_html__( 'Settings', 'wp-guzzle' ),
 		) ) );
 		return $actions;
 	}
@@ -150,10 +150,10 @@ class Admin
 		$this->add_section( array(
 			'section'     => self::SECTION_DELETE,
 			'page'        => self::PAGE,
-			'label'       => __( 'DANGER ZONE!', '[plugin-text-domain]' ),
+			'label'       => __( 'DANGER ZONE!', 'wp-guzzle' ),
 			'description' => vsprintf( '<p>%s %s</p>', array(
-				esc_html__( 'Check the below checkbox to also delete all plugin data and settings when this plugin is deleted.', '[plugin-text-domain]' ),
-				esc_html__( 'Only do this if you do not intend to use this plugin again, all your data and settings will be lost.', '[plugin-text-domain]' ),
+				esc_html__( 'Check the below checkbox to also delete all plugin data and settings when this plugin is deleted.', 'wp-guzzle' ),
+				esc_html__( 'Only do this if you do not intend to use this plugin again, all your data and settings will be lost.', 'wp-guzzle' ),
 			) ),
 		) );
 
@@ -162,8 +162,8 @@ class Admin
 			'option'      => self::OPTION_DELETE_SETTINGS,
 			'section'     => self::SECTION_DELETE,
 			'page'        => self::PAGE,
-			'label'       => __( 'Also delete plugin data', '[plugin-text-domain]' ),
-			'description' => __( 'Check to also delete all plugin data and settings when deleting this plugin.', '[plugin-text-domain]' ),
+			'label'       => __( 'Also delete plugin data', 'wp-guzzle' ),
+			'description' => __( 'Check to also delete all plugin data and settings when deleting this plugin.', 'wp-guzzle' ),
 		) );
 	}
 

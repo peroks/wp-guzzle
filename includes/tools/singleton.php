@@ -1,4 +1,4 @@
-<?php namespace peroks\plugin_customer\plugin_package;
+<?php namespace peroks\plugins\guzzle;
 /**
  * Implements the singleton pattern.
  *
