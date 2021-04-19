@@ -13,20 +13,18 @@ if ( empty( function_exists( 'GuzzleHttp\Psr7\str' ) ) ) {
 spl_autoload_register( function ( $name ) {
 	if ( strpos( $name, 'GuzzleHttp\\' ) === 0 ) {
 		if ( strpos( $name, 'GuzzleHttp\\Cookie\\' ) === 0 ) {
-			$dir = 'guzzle' . DIRECTORY_SEPARATOR . 'Cookie' . DIRECTORY_SEPARATOR;
-			include $dir . substr( $name, 18 ) . '.php';
+			$path = array( 'guzzle', 'Cookie', substr( $name, 18 ) . '.php' );
 		} elseif ( strpos( $name, 'GuzzleHttp\\Exception\\' ) === 0 ) {
-			$dir = 'guzzle' . DIRECTORY_SEPARATOR . 'Exception' . DIRECTORY_SEPARATOR;
-			include $dir . substr( $name, 21 ) . '.php';
+			$path = array( 'guzzle', 'Exception', substr( $name, 21 ) . '.php' );
 		} elseif ( strpos( $name, 'GuzzleHttp\\Handler\\' ) === 0 ) {
-			$dir = 'guzzle' . DIRECTORY_SEPARATOR . 'Handler' . DIRECTORY_SEPARATOR;
-			include $dir . substr( $name, 19 ) . '.php';
+			$path = array( 'guzzle', 'Handler', substr( $name, 19 ) . '.php' );
 		} elseif ( strpos( $name, 'GuzzleHttp\\Promise\\' ) === 0 ) {
-			include 'promises' . DIRECTORY_SEPARATOR . substr( $name, 19 ) . '.php';
+			$path = array( 'promises', substr( $name, 19 ) . '.php' );
 		} elseif ( strpos( $name, 'GuzzleHttp\\Psr7\\' ) === 0 ) {
-			include 'psr7' . DIRECTORY_SEPARATOR . substr( $name, 16 ) . '.php';
+			$path = array( 'psr7', substr( $name, 16 ) . '.php' );
 		} else {
-			include 'guzzle' . DIRECTORY_SEPARATOR . substr( $name, 11 ) . '.php';
+			$path = array( 'guzzle', substr( $name, 11 ) . '.php' );
 		}
+		include join( DIRECTORY_SEPARATOR, $path );
 	}
 } );

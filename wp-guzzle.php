@@ -13,7 +13,7 @@
  * Stable tag:        7.3.0
  * Requires at least: 5.0
  * Tested up to:      5.7
- * Requires PHP:      7.2
+ * Requires PHP:      7.2.5
  */
 
 /**
@@ -70,7 +70,7 @@ class Main
 	 * @todo Replace this with the system requirements of your owe plugin.
 	 * @see Main::check() below and possibly add/remove system checks and constants.
 	 */
-	const REQUIRE_PHP = '7.2';	//	Required PHP version
+	const REQUIRE_PHP = '7.2.5';	//	Required PHP version
 	const REQUIRE_WP  = '5.0';	//	Required WordPress version
 
 	/**
