@@ -9,8 +9,8 @@
  * Author:            Per Egil Roksvaag
  * Author URI:        https://codeable.io/developers/per-egil-roksvaag/
  *
- * Version:           7.3.0
- * Stable tag:        7.3.0
+ * Version:           7.3.1
+ * Stable tag:        7.3.1
  * Requires at least: 5.0
  * Tested up to:      5.7
  * Requires PHP:      7.2.5
@@ -20,7 +20,7 @@
  * The Guzzle for WordPress plugin main class.
  *
  * @author Per Egil Roksvaag
- * @version 7.3.0
+ * @version 7.3.1
  */
 class Main
 {
@@ -61,7 +61,7 @@ class Main
 	 * @var string The plugin version.
 	 * @todo Set your plugin version number.
 	 */
-	const VERSION = '7.3.0';
+	const VERSION = '7.3.1';
 
 	/**
 	 * Only requirement constants > '0' will be checked.
