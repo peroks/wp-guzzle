@@ -32,6 +32,9 @@ trivial to integrate with web services.
 
 ## Changelog
 
+### Version 7.3.2 / 2021-04-20
+* Added simple Guzzle tools
+
 ### Version 7.3.1 / 2021-04-19
 * Added Guzzle cache middleware
 
