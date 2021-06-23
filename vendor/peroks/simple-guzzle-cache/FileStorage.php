@@ -117,6 +117,21 @@ class FileStorage implements CacheInterface
 	}
 
 	/**
+	 * Removes old keys from the cache.
+	 *
+	 * @param int $max The maximum allowed age in seconds, defaults to 604800 (one week).
+	 * @return bool True on success and false on failure.
+	 */
+	public function clean( int $max = 604800 ) {
+		foreach ( new DirectoryIterator( $this->dir ) as $file ) {
+			if ( empty( $file->isDot() ) && time() > $file->getMTime() + $max ) {
+				unlink( $file->getPathname() );
+			}
+		}
+		return true;
+	}
+
+	/**
 	 * Obtains multiple cache items by their unique keys.
 	 *
 	 * @param iterable $keys A list of keys that can be obtained in a single operation.

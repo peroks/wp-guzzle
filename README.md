@@ -32,6 +32,9 @@ trivial to integrate with web services.
 
 ## Changelog
 
+### Version 7.3.3 / 2021-06-23
+* Added FileStorage::clean()
+
 ### Version 7.3.2 / 2021-04-20
 * Added simple Guzzle tools
 
